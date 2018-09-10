@@ -1,4 +1,4 @@
-package groupwork
+package groupwork.exercises
 
 /** Class problem
   *
@@ -28,12 +28,6 @@ class Edge(
   val target: String,
   date: Option[String] = None
 ) extends GraphObject(id, date)
-
-object GraphDriver {
-  def main: Unit = {
-    val davidJ = new Node
-  }
-}
 
 /*
 Option[String] is either Some(stringValue) or None
