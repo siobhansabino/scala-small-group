@@ -160,7 +160,21 @@ object CollectionOfCollections {
     println(mapExtended)
   }
   
-  def forExample: Unit = println("\n\nfor: tbd") //todo
+  def forExample: Unit = {
+    println("\n\n***\tFOR EXAMPLE\t***")
+  
+    println("\n\nData")
+    val data = Set(1, 2, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 8, 9, 7, 3, 2)
+    println(data)
+    
+    println("\n\nTriple everything")
+    val dataTripled = {
+      for {
+        member <- data
+      } yield member * 3
+    }
+    println(dataTripled)
+  }
   
   def runAll: Unit = {
     listsExample
