@@ -43,7 +43,7 @@ object CollectionOfCollections {
     println("Filter to keep only even elements:")
     val listEven = listBasic.filter(element => element % 2 == 0)
     println(listEven)
-    println("Map to triply all elements:")
+    println("Map to triple all elements:")
     val listTriple = listBasic.map(element => element * 3)
     println(listTriple)
   }
@@ -95,12 +95,70 @@ object CollectionOfCollections {
     println("Filter to keep only even elements:")
     val setEven = setBasic.filter(element => element % 2 == 0)
     println(setEven)
-    println("Map to triply all elements:")
+    println("Map to triple all elements:")
     val setTriple = setBasic.map(element => element * 3)
     println(setTriple)
   }
   
-  def mapsExample: Unit = println("\n\nmaps: tbd") //todo
+  def mapsExample: Unit = {
+    println("\n\n***\tMAP EXAMPLE\t***")
+  
+    println("\n\nBasic map creation")
+    val mapBasic = Map(1 -> "one", 2 -> "four", 3 -> "nine", 4 -> "sixteen")
+    println(mapBasic)
+  
+    println("\n\nStringifying maps")
+    println(mapBasic.mkString(", "))
+    println(mapBasic.map(tuple => tuple._1 + ": " + tuple._2).mkString(", "))
+    println(mapBasic.mkString("[", ", ", "]"))
+    println(mapBasic.map(tuple => tuple._1 + ": " + tuple._2).mkString("[", ", ", "]"))
+  
+    println("\n\nSet of tuples to map")
+    println("A set of tuples where the first part of each tuple itself makes a set… is a map.")
+    val setOfTuples = Set(
+      (1, "one"),
+      (2, "four"),
+      (3, "nine"),
+      (4, "sixteen")
+    )
+    println(setOfTuples)
+    val mapFromList = setOfTuples.toMap
+    println(mapFromList)
+  
+    println("\n\nBasic map information")
+    println("Contains '2':\t" + mapBasic.contains(2))
+    println("Contains '5':\t" + mapBasic.contains(5))
+    println("Size:\t" + mapBasic.size)
+    println("Is empty:\t" + mapBasic.isEmpty)
+    println("Is non empty:\t" + mapBasic.nonEmpty)
+    
+    println("\n\nAdding and removing maps")
+    val mapSquares = mapBasic
+    println("Squares:\t" + mapSquares)
+    val mapCubes = Map(1 -> "one", 2 -> "eight", 3 -> "twenty seven", 4 -> "sixty four")
+    println("Cubes:\t" + mapCubes)
+    val mapSquaresPlusCubes = mapSquares ++ mapCubes
+    println("Squares plus cubes:\t" + mapSquaresPlusCubes)
+    val mapCubesPlusSquares = mapCubes ++ mapSquares
+    println("Cubes plus squares:\t" + mapCubesPlusSquares)
+    
+    println("\n\nTake and drop")
+    println("Full:\t" + mapBasic)
+    println("Take 1:\t" + mapBasic.take(1))
+    println("Drop 1:\t" + mapBasic.drop(1))
+    
+    println("\n\nHigher order functions")
+    println("Filter to keep only even keys:")
+    val mapEvenKeys = mapBasic.filter(tuple => tuple._1 % 2 == 0)
+    println(mapEvenKeys)
+    println("Map to extend string of each value:")
+    val mapExtended = mapBasic.map(element => {
+      val (key, value) = element
+      val newValue = value + " :tada:"
+      (key, newValue)
+    })
+    println(mapExtended)
+  }
   
   def forExample: Unit = println("\n\nfor: tbd") //todo
   
