@@ -1,8 +1,8 @@
 package groupwork
 
-import org.scalatest.{FunSuite, GivenWhenThen}
+import org.scalatest.{BeforeAndAfter, FunSuite, GivenWhenThen}
 
-class SortSamplerSuite extends FunSuite with GivenWhenThen {
+class SortSamplerSuite extends FunSuite with GivenWhenThen with BeforeAndAfter {
   test("Bubble sort") {
     Given("unsorted input")
     val input: List[Int] = List(6, 5, 10, 9, 4, 3, 8, 7, 2, 1)
