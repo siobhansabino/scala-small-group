@@ -16,7 +16,10 @@ trait Temporal {
     case None => "no end"
   }
   
-  def wasActive(point: Date): Boolean = ???
+  def wasActive(point: Date): Boolean = {
+    require(point <= now, { "Cannot check if was active in the future." })
+    ???
+  }
   
   def isActive: Boolean = wasActive(now)
 }

@@ -1,13 +1,9 @@
 package groupwork.examples
 
 case class Graph(members: Set[GraphObject], name: Option[String]) {
-  def +(that: Graph): Graph = {
-    val newName = this.name match {
-      case Some(thisName) => thisName
-      case None => that.name.get
-    }
-    new Graph(this.members ++ that.members, newName)
-  }
+  def +(that: GraphObject): Graph = new Graph(this.members + that, name)
+  
+  def ++(that: Graph): Graph = new Graph(this.members ++ that.members, this.name.orElse(that.name))
 }
 
 object Graph {

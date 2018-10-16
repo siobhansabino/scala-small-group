@@ -3,16 +3,25 @@ package groupwork.examples
 abstract class GraphObject(val id: String) {
   require(id.nonEmpty, { "Graph object id cannot be empty." } )
   
+  private val signature = java.util.UUID.randomUUID.toString
+  
+  protected val createdAt = Temporal.now
+  
   def asMap: Map[String, String] = Map("id" -> id)
 
   override def toString: String = s"Graph object $id"
 }
+
+//TemporalGraphObject can no longer live in its own file
 
 class Node(id: String) extends GraphObject(id) {
   override def toString: String = s"Node $id"
 }
 
 class Edge(id: String, val source: String, val target: String) extends GraphObject(id) {
+  require(source.nonEmpty, { "Source id cannot be empty." })
+  require(target.nonEmpty, { "Target id cannot be empty." })
+  
   override def asMap: Map[String, String] = super.asMap ++ Map("source" -> source, "target" -> target)
 
   override def toString: String = s"Edge $id from $source -> $target"
