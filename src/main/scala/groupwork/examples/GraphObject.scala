@@ -12,8 +12,6 @@ abstract class GraphObject(val id: String) {
   override def toString: String = s"Graph object $id"
 }
 
-//TemporalGraphObject can no longer live in its own file
-
 class Node(id: String) extends GraphObject(id) {
   override def toString: String = s"Node $id"
 }
