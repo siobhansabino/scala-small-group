@@ -2,6 +2,8 @@ package groupwork
 
 import groupwork.examples.CollectionOfCollections
 
+import scala.util.Try
+
 object Driver extends App {
   override def main(args: Array[String]): Unit = {
     /*val test = Set(1, 2, 3)
@@ -17,5 +19,5 @@ object Driver extends App {
     println("Hello world!")
   
     CollectionOfCollections.runAll
-  } //todo: update with what have done in project 
+  } //todo: update with what have done in project
 }
