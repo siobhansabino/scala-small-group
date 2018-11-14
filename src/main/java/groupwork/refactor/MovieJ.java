@@ -1,6 +1,6 @@
-package groupwork;
+package groupwork.refactor;
 
-public class Movie extends DomainObject {
+public class MovieJ extends DomainObjectJ {
     public static final int  CHILDRENS = 2;
     public static final int  REGULAR = 0;
     public static final int  NEW_RELEASE = 1;
@@ -8,7 +8,7 @@ public class Movie extends DomainObject {
 
     private int _priceCode;
 
-    public Movie(String name, int priceCode) {
+    public MovieJ(String name, int priceCode) {
         _name = name;
         _priceCode = priceCode;
     }
@@ -18,10 +18,10 @@ public class Movie extends DomainObject {
     }
 
     public void persist() {
-        Registrar.add ("Movies", this);
+        RegistrarJ.add ("Movies", this);
     }
 
-    public static Movie get(String name) {
-        return (Movie) Registrar.get ("Movies", name);
+    public static MovieJ get(String name) {
+        return (MovieJ) RegistrarJ.get ("Movies", name);
     }
 }

@@ -1,12 +1,12 @@
-package groupwork;
+package groupwork.refactor;
 
-public class DomainObject {
+public class DomainObjectJ {
 
-    public DomainObject (String name)	{
+    public DomainObjectJ(String name)	{
         _name = name;
     };
 
-    public DomainObject ()	{};
+    public DomainObjectJ()	{};
 
     public String name ()	{
         return _name;
