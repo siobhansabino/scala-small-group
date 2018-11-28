@@ -12,3 +12,7 @@ Write me classes to represent the following objects. You may do this in whatever
 1. Nodes and edges have ids and maybe the date created (which can be stored as a string or an epoch, your choice).
 1. Edges also have a source and target id.
 1. Nodes might have properties which can be represented in a map with string keys and unknown value types.
+
+## k-ary tree
+
+Make me a usable representation of a [k-ary tree](https://en.wikipedia.org/wiki/K-ary_tree).

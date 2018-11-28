@@ -9,7 +9,8 @@ object Registrar {
     cache ++ Map(category -> (cache.getOrElse(category, Set()) + value))
   })
   
-  def get(category: String, name: String): Option[DomainObject] = {
-    ??? //todo
-  }
+  def get(category: String, name: String): Option[DomainObject] = cache
+    .getOrElse(category, Set())
+    .filter(domainObject => domainObject.name == name)
+    .headOption
 }

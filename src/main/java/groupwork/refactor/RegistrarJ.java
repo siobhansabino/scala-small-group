@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-// todo: refactor
 public class RegistrarJ {
     public static void add(String category, DomainObjectJ value) {
         if (!_cache.containsKey(category)) {
